@@ -3,267 +3,312 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Amin Zakaria | Liverpool & Karang Taruna</title>
+    <title>Amin Zakaria | Pro Gamer & Student</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&family=Bebas+Neue&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap');
         
         body {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            background-color: #020617;
-            color: #f8fafc;
+            font-family: 'Poppins', sans-serif;
+            background-color: #0f172a;
+            color: #f1f5f9;
             scroll-behavior: smooth;
         }
 
         .glass-card {
-            background: rgba(15, 23, 42, 0.6);
-            backdrop-filter: blur(16px);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            border-radius: 28px;
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         .glass-card:hover {
-            border-color: rgba(56, 189, 248, 0.4);
-            transform: scale(1.02);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
-        }
-
-        .liverpool-card {
-            background: linear-gradient(135deg, #c8102e 0%, #8d0a1e 100%);
-            border: none;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(239, 68, 68, 0.3);
         }
 
         .gradient-text {
-            background: linear-gradient(90deg, #38bdf8, #818cf8, #fb7185);
+            background: linear-gradient(90deg, #ef4444, #f87171);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
-        .ynwa-font {
-            font-family: 'Bebas Neue', cursive;
-            letter-spacing: 2px;
+        .hero-pattern {
+            background-image: radial-gradient(#ef4444 0.5px, transparent 0.5px);
+            background-size: 24px 24px;
+            opacity: 0.1;
         }
 
-        .animated-bg {
-            background: 
-                radial-gradient(circle at 0% 0%, rgba(56, 189, 248, 0.1) 0%, transparent 40%),
-                radial-gradient(circle at 100% 100%, rgba(200, 16, 46, 0.1) 0%, transparent 40%),
-                #020617;
+        .nav-link {
+            position: relative;
         }
 
-        @keyframes pulse-red {
-            0%, 100% { box-shadow: 0 0 0 0 rgba(200, 16, 46, 0.4); }
-            50% { box-shadow: 0 0 20px 10px rgba(200, 16, 46, 0); }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background-color: #ef4444;
+            transition: width 0.3s;
         }
 
-        .active-dot {
-            animation: pulse-red 2s infinite;
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0f172a;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #ef4444;
+            border-radius: 10px;
         }
     </style>
 </head>
-<body class="animated-bg min-h-screen">
+<body class="overflow-x-hidden">
 
     <!-- Navigation -->
-    <nav class="fixed top-0 w-full z-50 p-6 flex justify-between items-center bg-slate-950/40 backdrop-blur-xl border-b border-white/5">
-        <div class="text-2xl font-extrabold tracking-tighter gradient-text">AMIN.Z</div>
-        <div class="hidden md:flex space-x-10 font-semibold text-sm uppercase tracking-widest">
-            <a href="#home" class="hover:text-sky-400 transition-colors">Home</a>
-            <a href="#about" class="hover:text-sky-400 transition-colors">Profil</a>
-            <a href="#activity" class="hover:text-sky-400 transition-colors">Aktivitas</a>
-            <a href="#liverpool" class="hover:text-red-500 transition-colors">LFC</a>
-        </div>
-        <div class="flex items-center space-x-4">
-            <span class="text-[10px] bg-sky-500/10 text-sky-400 px-3 py-1 rounded-full border border-sky-500/20 font-bold">SMAN 1 MAGETAN</span>
+    <nav class="fixed w-full z-50 bg-slate-900/80 backdrop-blur-md border-b border-white/10">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="text-2xl font-bold tracking-tighter">AMIN<span class="text-red-500">Z.</span></div>
+            <div class="hidden md:flex space-x-8">
+                <a href="#home" class="nav-link text-sm font-medium">Beranda</a>
+                <a href="#about" class="nav-link text-sm font-medium">Profil</a>
+                <a href="#achievements" class="nav-link text-sm font-medium">Prestasi</a>
+                <a href="#activities" class="nav-link text-sm font-medium">Kegiatan</a>
+            </div>
+            <div class="md:hidden text-2xl" onclick="toggleMenu()">
+                <i class="fas fa-bars"></i>
+            </div>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section id="home" class="pt-40 pb-20 px-6 flex flex-col items-center justify-center text-center">
-        <div class="relative mb-10">
-            <!-- Container Foto Profil -->
-            <div class="w-40 h-40 md:w-56 md:h-56 rounded-3xl overflow-hidden border-2 border-white/10 rotate-3 hover:rotate-0 transition-transform duration-500 shadow-2xl">
-                <!-- Foto dari file yang diupload -->
-                <img src="IMG-20251222-WA0103.jpg" alt="Amin Zakaria" class="w-full h-full object-cover scale-110 hover:scale-100 transition-transform duration-700" onerror="this.src='https://ui-avatars.com/api/?name=Amin+Zakaria&background=c8102e&color=fff&size=512'">
-            </div>
-            <!-- Badge Liverpool -->
-            <div class="absolute -top-4 -right-4 bg-[#c8102e] text-white w-12 h-12 flex items-center justify-center rounded-full shadow-lg border-2 border-white/20 active-dot">
-                <i class="fas fa-shield-alt"></i>
-            </div>
+    <!-- Mobile Menu (Overlay) -->
+    <div id="mobile-menu" class="fixed inset-0 bg-slate-900 z-[60] flex flex-col items-center justify-center space-y-8 text-2xl hidden">
+        <div class="absolute top-6 right-6" onclick="toggleMenu()">
+            <i class="fas fa-times"></i>
         </div>
-        
-        <div class="space-y-4">
-            <h2 class="text-sky-400 font-bold tracking-[0.3em] text-sm uppercase">Personal Profile</h2>
-            <h1 class="text-5xl md:text-8xl font-extrabold mb-4 tracking-tight leading-none">
-                Amin <span class="gradient-text">Zakaria</span>
-            </h1>
-            <p class="text-slate-400 text-lg md:text-xl max-w-xl mx-auto leading-relaxed">
-                Pelajar Magetan • Aktivis Karang Taruna • <span class="text-red-500 font-bold">Liverpool FC Enthusiast</span>
-            </p>
-        </div>
+        <a href="#home" onclick="toggleMenu()" class="hover:text-red-500">Beranda</a>
+        <a href="#about" onclick="toggleMenu()" class="hover:text-red-500">Profil</a>
+        <a href="#achievements" onclick="toggleMenu()" class="hover:text-red-500">Prestasi</a>
+        <a href="#activities" onclick="toggleMenu()" class="hover:text-red-500">Kegiatan</a>
+    </div>
 
-        <div class="mt-12 flex flex-wrap justify-center gap-4">
-            <a href="#about" class="bg-white text-slate-900 px-10 py-4 rounded-2xl font-bold hover:bg-sky-400 hover:text-white transition-all shadow-xl shadow-white/5">
-                Explore My Life
-            </a>
-            <a href="https://www.liverpoolfc.com" target="_blank" class="bg-red-600/10 border border-red-600/30 text-red-500 px-10 py-4 rounded-2xl font-bold hover:bg-red-600 hover:text-white transition-all">
-                #YNWA
-            </a>
+    <!-- Hero Section -->
+    <section id="home" class="relative min-h-screen flex items-center justify-center pt-20">
+        <div class="hero-pattern absolute inset-0"></div>
+        <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center relative z-10">
+            <div class="order-2 md:order-1 text-center md:text-left">
+                <h2 class="text-red-500 font-semibold tracking-widest uppercase mb-4">Pelajar & Pro Gamer</h2>
+                <h1 class="text-5xl md:text-7xl font-extrabold leading-tight mb-6">
+                    Halo, Saya <br><span class="gradient-text">Amin Zakaria</span>
+                </h1>
+                <p class="text-slate-400 text-lg mb-8 max-w-lg">
+                    Siswa SMAN 1 Magetan yang bermimpi menjadi legenda di dunia e-sports dan aktif dalam membangun komunitas melalui Karang Taruna.
+                </p>
+                <div class="flex flex-wrap gap-4 justify-center md:justify-start">
+                    <a href="#about" class="bg-red-600 hover:bg-red-700 text-white px-8 py-3 rounded-full font-semibold transition-all shadow-lg shadow-red-600/20">Tentang Saya</a>
+                    <a href="#achievements" class="border border-white/20 hover:border-red-500 px-8 py-3 rounded-full font-semibold transition-all">Lihat Prestasi</a>
+                </div>
+            </div>
+            <div class="order-1 md:order-2 flex justify-center">
+                <div class="relative w-64 h-64 md:w-80 md:h-80 group">
+                    <div class="absolute inset-0 bg-red-600 rounded-2xl rotate-6 group-hover:rotate-12 transition-transform duration-500"></div>
+                    <div class="absolute inset-0 bg-slate-800 rounded-2xl overflow-hidden border-2 border-white/10">
+                        <!-- Profil image container -->
+                        <img src="https://lh3.googleusercontent.com/d/1Bq_HRFmA84z58jg72lT8ULPyL-K886Yo" alt="Amin Zakaria" class="w-full h-full object-cover">
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- Content Sections -->
-    <main class="max-w-6xl mx-auto px-6 space-y-32 pb-32">
-        
-        <!-- About Section -->
-        <section id="about" class="grid md:grid-cols-2 gap-16 items-center">
-            <div class="space-y-8">
-                <div>
-                    <h3 class="text-4xl font-extrabold mb-6">Identitas <span class="text-sky-500">Diri</span></h3>
-                    <p class="text-slate-400 text-lg leading-relaxed">
-                        Lahir di Magetan pada 14 Agustus 2007. Sebagai siswa di SMAN 1 Magetan, saya percaya bahwa masa muda adalah waktu terbaik untuk berkontribusi bagi lingkungan sekitar.
-                    </p>
-                </div>
-                <div class="grid grid-cols-2 gap-4">
-                    <div class="glass-card p-5">
-                        <p class="text-xs text-slate-500 uppercase mb-1">Status</p>
-                        <p class="font-bold">Laki-laki</p>
-                    </div>
-                    <div class="glass-card p-5">
-                        <p class="text-xs text-slate-500 uppercase mb-1">Domisili</p>
-                        <p class="font-bold">Magetan, Jatim</p>
-                    </div>
-                </div>
+    <!-- About Section -->
+    <section id="about" class="py-24 bg-slate-900/50">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold mb-4">Data Diri</h2>
+                <div class="w-20 h-1 bg-red-500 mx-auto"></div>
             </div>
-            <div class="glass-card p-8 bg-gradient-to-br from-slate-900 to-slate-950">
-                <div class="space-y-6">
-                    <div class="flex items-center p-4 bg-white/5 rounded-2xl">
-                        <i class="fas fa-university text-sky-400 text-2xl mr-4"></i>
-                        <div>
-                            <p class="text-xs text-slate-400">Sekolah</p>
-                            <p class="font-bold uppercase tracking-wide">SMAN 1 MAGETAN</p>
-                        </div>
-                    </div>
-                    <div class="flex items-center p-4 bg-white/5 rounded-2xl border-l-4 border-red-600">
-                        <i class="fas fa-users text-red-500 text-2xl mr-4"></i>
-                        <div>
-                            <p class="text-xs text-slate-400">Organisasi</p>
-                            <p class="font-bold uppercase tracking-wide">Aktif Karang Taruna</p>
-                        </div>
-                    </div>
-                    <div class="flex items-center p-4 bg-white/5 rounded-2xl">
-                        <i class="fas fa-gamepad text-emerald-400 text-2xl mr-4"></i>
-                        <div>
-                            <p class="text-xs text-slate-400">Hobi Utama</p>
-                            <p class="font-bold uppercase tracking-wide">Pro Gaming & Strategy</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Liverpool Section -->
-        <section id="liverpool" class="liverpool-card rounded-[40px] p-8 md:p-16 text-white relative overflow-hidden">
-            <div class="absolute -right-20 -bottom-20 opacity-10 rotate-12">
-                <i class="fas fa-trophy text-[300px]"></i>
-            </div>
-            <div class="relative z-10 grid md:grid-cols-2 gap-10 items-center">
-                <div>
-                    <h2 class="ynwa-font text-6xl md:text-8xl mb-4">You'll Never Walk Alone</h2>
-                    <p class="text-white/80 text-lg mb-8 italic">
-                        "Liverpool bukan sekadar klub sepak bola bagi saya, ini adalah tentang loyalitas, semangat pantang menyerah, dan keluarga."
-                    </p>
-                    <div class="flex items-center space-x-4">
-                        <div class="h-[2px] w-20 bg-white"></div>
-                        <span class="font-bold tracking-widest text-sm">THE KOP MAGETAN</span>
-                    </div>
-                </div>
-                <div class="grid grid-cols-2 gap-4">
-                    <div class="bg-black/20 p-6 rounded-3xl backdrop-blur-sm border border-white/10 text-center">
-                        <i class="fas fa-star text-yellow-400 mb-2"></i>
-                        <p class="text-xs uppercase opacity-70">Passion</p>
-                        <p class="font-bold">EPL & UCL</p>
-                    </div>
-                    <div class="bg-black/20 p-6 rounded-3xl backdrop-blur-sm border border-white/10 text-center">
-                        <i class="fas fa-heart text-white mb-2"></i>
-                        <p class="text-xs uppercase opacity-70">Sejak</p>
-                        <p class="font-bold">Kecil</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Karang Taruna & Hobbies -->
-        <section id="activity" class="space-y-12">
-            <div class="flex items-center justify-between">
-                <h2 class="text-3xl font-bold">Aktivitas & <span class="text-sky-400">Kontribusi</span></h2>
-            </div>
+            
             <div class="grid md:grid-cols-2 gap-8">
-                <!-- Karang Taruna -->
-                <div class="glass-card p-10 flex flex-col justify-between group">
-                    <div>
-                        <div class="w-16 h-16 bg-blue-500/20 text-blue-400 rounded-2xl flex items-center justify-center text-2xl mb-8 group-hover:bg-blue-500 group-hover:text-white transition-all">
-                            <i class="fas fa-hands-helping"></i>
-                        </div>
-                        <h3 class="text-2xl font-bold mb-4">Karang Taruna</h3>
-                        <p class="text-slate-400 leading-relaxed mb-6">
-                            Aktif berkontribusi dalam kegiatan sosial di desa. Mulai dari acara 17 Agustusan hingga bakti sosial, saya senang berorganisasi dan belajar kepemimpinan sejak dini.
-                        </p>
-                    </div>
-                    <div class="pt-6 border-t border-white/5 flex gap-2">
-                        <span class="text-[10px] bg-white/5 px-3 py-1 rounded-lg uppercase font-bold">Leadership</span>
-                        <span class="text-[10px] bg-white/5 px-3 py-1 rounded-lg uppercase font-bold">Social</span>
-                    </div>
+                <div class="glass-card p-8 rounded-3xl">
+                    <h3 class="text-xl font-bold mb-6 flex items-center gap-3">
+                        <i class="fas fa-user-circle text-red-500"></i> Informasi Pribadi
+                    </h3>
+                    <ul class="space-y-4 text-slate-300">
+                        <li class="flex justify-between border-b border-white/5 pb-2">
+                            <span>Jenis Kelamin:</span>
+                            <span class="text-white font-medium">Laki-laki</span>
+                        </li>
+                        <li class="flex justify-between border-b border-white/5 pb-2">
+                            <span>Tempat Lahir:</span>
+                            <span class="text-white font-medium">Magetan</span>
+                        </li>
+                        <li class="flex justify-between border-b border-white/5 pb-2">
+                            <span>Tanggal Lahir:</span>
+                            <span class="text-white font-medium">14 Agustus 2007</span>
+                        </li>
+                        <li class="flex justify-between border-b border-white/5 pb-2">
+                            <span>Hobi:</span>
+                            <span class="text-white font-medium">Gaming (Pro)</span>
+                        </li>
+                    </ul>
                 </div>
 
-                <!-- Gaming -->
-                <div class="glass-card p-10 flex flex-col justify-between group">
-                    <div>
-                        <div class="w-16 h-16 bg-purple-500/20 text-purple-400 rounded-2xl flex items-center justify-center text-2xl mb-8 group-hover:bg-purple-500 group-hover:text-white transition-all">
-                            <i class="fas fa-gamepad"></i>
-                        </div>
-                        <h3 class="text-2xl font-bold mb-4">Pro Gaming</h3>
-                        <p class="text-slate-400 leading-relaxed mb-6">
-                            Dunia gaming mengajarkan saya arti fokus dan ketenangan dalam tekanan. Saya suka mengeksplorasi berbagai genre game, mulai dari kompetitif hingga petualangan.
-                        </p>
+                <div class="glass-card p-8 rounded-3xl">
+                    <h3 class="text-xl font-bold mb-6 flex items-center gap-3">
+                        <i class="fas fa-graduation-cap text-red-500"></i> Pendidikan
+                    </h3>
+                    <div class="mb-6">
+                        <p class="text-red-400 text-sm mb-1 italic">Saat ini menempuh pendidikan di:</p>
+                        <h4 class="text-2xl font-bold">SMAN 1 MAGETAN</h4>
+                        <p class="text-slate-400 mt-2">Aktif dalam kegiatan akademik dan non-akademik sekolah.</p>
                     </div>
-                    <div class="pt-6 border-t border-white/5 flex gap-2">
-                        <span class="text-[10px] bg-white/5 px-3 py-1 rounded-lg uppercase font-bold">Reflex</span>
-                        <span class="text-[10px] bg-white/5 px-3 py-1 rounded-lg uppercase font-bold">Strategy</span>
+                    <div class="pt-4 border-t border-white/5 flex items-center gap-4">
+                        <i class="fab fa-kickstarter-k text-4xl opacity-20"></i>
+                        <p class="text-sm font-semibold tracking-widest text-red-500 uppercase">You'll Never Walk Alone</p>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-    </main>
+    <!-- Achievements Section -->
+    <section id="achievements" class="py-24">
+        <div class="max-w-6xl mx-auto px-6 text-center">
+            <h2 class="text-4xl font-extrabold mb-4 uppercase tracking-tighter">Arena Juara</h2>
+            <p class="text-slate-400 mb-16">Rekam jejak kemenangan di tingkat Nasional</p>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Achievement 1 -->
+                <div class="glass-card p-8 rounded-3xl relative overflow-hidden group">
+                    <div class="absolute -right-4 -top-4 text-6xl opacity-10 group-hover:rotate-12 transition-all">
+                        <i class="fas fa-chess-knight"></i>
+                    </div>
+                    <div class="bg-red-500/20 w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6 text-2xl text-red-500">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Juara 1 Nasional</h3>
+                    <p class="text-red-500 font-bold text-sm mb-4 uppercase tracking-widest">Magic Chest Go Go</p>
+                    <p class="text-slate-400 text-sm">Menaklukkan strategi papan catur tingkat tinggi melawan pemain terbaik se-Indonesia.</p>
+                </div>
+
+                <!-- Achievement 2 -->
+                <div class="glass-card p-8 rounded-3xl relative overflow-hidden group border-red-500/30">
+                    <div class="absolute -right-4 -top-4 text-6xl opacity-10 group-hover:rotate-12 transition-all">
+                        <i class="fas fa-gamepad"></i>
+                    </div>
+                    <div class="bg-red-600 w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6 text-2xl text-white shadow-lg shadow-red-600/50">
+                        <i class="fas fa-crown"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Juara 1 MPL</h3>
+                    <p class="text-red-500 font-bold text-sm mb-4 uppercase tracking-widest">Tingkat Nasional</p>
+                    <p class="text-slate-400 text-sm">Berada di puncak klasemen kompetisi Mobile Legends Bang Bang tingkat nasional.</p>
+                </div>
+
+                <!-- Achievement 3 -->
+                <div class="glass-card p-8 rounded-3xl relative overflow-hidden group">
+                    <div class="absolute -right-4 -top-4 text-6xl opacity-10 group-hover:rotate-12 transition-all">
+                        <i class="fas fa-futbol"></i>
+                    </div>
+                    <div class="bg-red-500/20 w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6 text-2xl text-red-500">
+                        <i class="fas fa-medal"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Juara 1 eFootball</h3>
+                    <p class="text-red-500 font-bold text-sm mb-4 uppercase tracking-widest">Tingkat Nasional</p>
+                    <p class="text-slate-400 text-sm">Membawa semangat Liverpool ke lapangan hijau virtual dengan dominasi penuh.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Activities & Passion -->
+    <section id="activities" class="py-24 bg-slate-800/30">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="space-y-8">
+                    <div class="glass-card p-10 rounded-[3rem] border-l-4 border-l-red-500">
+                        <div class="flex items-center gap-4 mb-6">
+                            <div class="p-3 bg-red-500/10 rounded-xl text-red-500">
+                                <i class="fas fa-users text-2xl"></i>
+                            </div>
+                            <h3 class="text-3xl font-bold">Karang Taruna</h3>
+                        </div>
+                        <p class="text-slate-300 leading-relaxed">
+                            Di luar dunia sekolah dan kompetisi, saya aktif berkontribusi di <strong>Karang Taruna</strong>. Saya percaya bahwa berbagi pengalaman dan tenaga untuk masyarakat Magetan adalah kunci menjadi pribadi yang lebih baik.
+                        </p>
+                    </div>
+
+                    <div class="glass-card p-10 rounded-[3rem] border-l-4 border-l-red-500">
+                        <div class="flex items-center gap-4 mb-6">
+                            <div class="p-3 bg-red-500/10 rounded-xl text-red-500">
+                                <i class="fas fa-heart text-2xl"></i>
+                            </div>
+                            <h3 class="text-3xl font-bold">Liverpool FC</h3>
+                        </div>
+                        <p class="text-slate-300 leading-relaxed">
+                            Seorang Kopites sejati. Filosofi <em>"You'll Never Walk Alone"</em> tidak hanya sekadar slogan klub bagi saya, tapi adalah prinsip hidup dalam bekerja sama dengan tim maupun di organisasi.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="flex flex-col gap-6">
+                    <div class="relative rounded-3xl overflow-hidden h-64 shadow-2xl">
+                        <img src="https://images.unsplash.com/photo-1543351611-58f69d7c1781?auto=format&fit=crop&q=80&w=800" alt="Soccer Stadium" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-red-900/80 to-transparent flex items-end p-6">
+                            <span class="text-white font-bold text-xl uppercase tracking-widest italic">The Kop Identity</span>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-2 gap-6">
+                        <div class="bg-red-600 rounded-3xl p-6 flex flex-col items-center justify-center text-center">
+                            <span class="text-4xl font-black mb-2">07'</span>
+                            <span class="text-xs uppercase font-bold opacity-80">Lahir di Magetan</span>
+                        </div>
+                        <div class="bg-slate-700 rounded-3xl p-6 flex flex-col items-center justify-center text-center">
+                            <i class="fas fa-map-marker-alt text-2xl mb-2 text-red-400"></i>
+                            <span class="text-xs uppercase font-bold opacity-80 text-white">SMASA Magetan</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Footer -->
-    <footer class="py-20 border-t border-white/5 px-6 text-center">
-        <div class="mb-8">
-            <h4 class="ynwa-font text-4xl text-slate-700">Amin Zakaria</h4>
-            <p class="text-slate-500 text-sm mt-2 uppercase tracking-widest">Magetan Pride • 2024</p>
+    <footer class="py-12 border-t border-white/5 bg-slate-900">
+        <div class="max-w-6xl mx-auto px-6 text-center">
+            <h2 class="text-2xl font-bold mb-6">AMIN<span class="text-red-500">Z.</span></h2>
+            <div class="flex justify-center space-x-6 mb-8 text-xl">
+                <a href="#" class="text-slate-400 hover:text-white transition-colors"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="text-slate-400 hover:text-white transition-colors"><i class="fab fa-tiktok"></i></a>
+                <a href="#" class="text-slate-400 hover:text-white transition-colors"><i class="fab fa-youtube"></i></a>
+                <a href="#" class="text-slate-400 hover:text-white transition-colors"><i class="fab fa-discord"></i></a>
+            </div>
+            <p class="text-slate-500 text-sm">
+                &copy; 2024 Amin Zakaria. Dibuat dengan semangat Juara dari Magetan.
+            </p>
         </div>
-        <div class="flex justify-center space-x-4 mb-10">
-            <a href="#" class="w-12 h-12 glass-card flex items-center justify-center hover:text-sky-400"><i class="fab fa-instagram"></i></a>
-            <a href="#" class="w-12 h-12 glass-card flex items-center justify-center hover:text-red-500"><i class="fab fa-youtube"></i></a>
-            <a href="#" class="w-12 h-12 glass-card flex items-center justify-center hover:text-white"><i class="fab fa-discord"></i></a>
-        </div>
-        <p class="text-xs text-slate-600 font-medium">Design inspired by the spirit of Anfield and Magetan's youth energy.</p>
     </footer>
 
     <script>
-        // Smooth scroll
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
+        function toggleMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
 
-        // Simple Fade In on Scroll
+        // Simple Reveal Animation on Scroll
+        const observerOptions = {
+            threshold: 0.1
+        };
+
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -271,7 +316,12 @@
                     entry.target.classList.remove('opacity-0', 'translate-y-10');
                 }
             });
-        }, { threshold: 0.1 });
+        }, observerOptions);
 
-        document.querySelectorAll('section').forEach(section => {
-            section.classList.
+        document.querySelectorAll('.glass-card').forEach(card => {
+            card.classList.add('opacity-0', 'translate-y-10', 'transition-all', 'duration-700');
+            observer.observe(card);
+        });
+    </script>
+</body>
+</html>
