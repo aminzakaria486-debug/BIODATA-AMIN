@@ -90,7 +90,7 @@
         </div>
     </nav>
 
-    <!-- Mobile Menu (Overlay) -->
+    <!-- Mobile Menu -->
     <div id="mobile-menu" class="fixed inset-0 bg-slate-900 z-[60] flex flex-col items-center justify-center space-y-8 text-2xl hidden">
         <div class="absolute top-6 right-6" onclick="toggleMenu()">
             <i class="fas fa-times"></i>
@@ -122,8 +122,8 @@
                 <div class="relative w-64 h-64 md:w-80 md:h-80 group">
                     <div class="absolute inset-0 bg-red-600 rounded-2xl rotate-6 group-hover:rotate-12 transition-transform duration-500"></div>
                     <div class="absolute inset-0 bg-slate-800 rounded-2xl overflow-hidden border-2 border-white/10">
-                        <!-- Profil image container -->
-                        <img src="https://lh3.googleusercontent.com/d/1Bq_HRFmA84z58jg72lT8ULPyL-K886Yo" alt="Amin Zakaria" class="w-full h-full object-cover">
+                        <!-- Profil image diperbarui -->
+                        <img src="https://lh3.googleusercontent.com/d/1d0oO8CH9ClLT8H20_a6ZXHVol6K6CbFc" alt="Amin Zakaria Profil Utama" class="w-full h-full object-cover">
                     </div>
                 </div>
             </div>
@@ -188,7 +188,6 @@
             <p class="text-slate-400 mb-16">Rekam jejak kemenangan di tingkat Nasional</p>
 
             <div class="grid md:grid-cols-3 gap-8">
-                <!-- Achievement 1 -->
                 <div class="glass-card p-8 rounded-3xl relative overflow-hidden group">
                     <div class="absolute -right-4 -top-4 text-6xl opacity-10 group-hover:rotate-12 transition-all">
                         <i class="fas fa-chess-knight"></i>
@@ -201,7 +200,6 @@
                     <p class="text-slate-400 text-sm">Menaklukkan strategi papan catur tingkat tinggi melawan pemain terbaik se-Indonesia.</p>
                 </div>
 
-                <!-- Achievement 2 -->
                 <div class="glass-card p-8 rounded-3xl relative overflow-hidden group border-red-500/30">
                     <div class="absolute -right-4 -top-4 text-6xl opacity-10 group-hover:rotate-12 transition-all">
                         <i class="fas fa-gamepad"></i>
@@ -214,7 +212,6 @@
                     <p class="text-slate-400 text-sm">Berada di puncak klasemen kompetisi Mobile Legends Bang Bang tingkat nasional.</p>
                 </div>
 
-                <!-- Achievement 3 -->
                 <div class="glass-card p-8 rounded-3xl relative overflow-hidden group">
                     <div class="absolute -right-4 -top-4 text-6xl opacity-10 group-hover:rotate-12 transition-all">
                         <i class="fas fa-futbol"></i>
@@ -230,7 +227,7 @@
         </div>
     </section>
 
-    <!-- Social Activities & Passion -->
+    <!-- Social Activities -->
     <section id="activities" class="py-24 bg-slate-800/30">
         <div class="max-w-6xl mx-auto px-6">
             <div class="grid md:grid-cols-2 gap-12 items-center">
@@ -262,7 +259,7 @@
                 
                 <div class="flex flex-col gap-6">
                     <div class="relative rounded-3xl overflow-hidden h-64 shadow-2xl">
-                        <img src="https://images.unsplash.com/photo-1543351611-58f69d7c1781?auto=format&fit=crop&q=80&w=800" alt="Soccer Stadium" class="w-full h-full object-cover">
+                        <img src="https://images.unsplash.com/photo-1543351611-58f69d7c1781?auto=format&fit=crop&q=80&w=800" alt="Stadion Sepak Bola" class="w-full h-full object-cover">
                         <div class="absolute inset-0 bg-gradient-to-t from-red-900/80 to-transparent flex items-end p-6">
                             <span class="text-white font-bold text-xl uppercase tracking-widest italic">The Kop Identity</span>
                         </div>
@@ -270,11 +267,11 @@
                     <div class="grid grid-cols-2 gap-6">
                         <div class="bg-red-600 rounded-3xl p-6 flex flex-col items-center justify-center text-center">
                             <span class="text-4xl font-black mb-2">07'</span>
-                            <span class="text-xs uppercase font-bold opacity-80">Lahir di Magetan</span>
+                            <span class="text-xs uppercase font-bold opacity-80 text-white">Lahir di Magetan</span>
                         </div>
                         <div class="bg-slate-700 rounded-3xl p-6 flex flex-col items-center justify-center text-center">
                             <i class="fas fa-map-marker-alt text-2xl mb-2 text-red-400"></i>
-                            <span class="text-xs uppercase font-bold opacity-80 text-white">SMASA Magetan</span>
+                            <span class="text-xs uppercase font-bold opacity-80 text-white text-white">SMASA Magetan</span>
                         </div>
                     </div>
                 </div>
@@ -304,7 +301,6 @@
             menu.classList.toggle('hidden');
         }
 
-        // Simple Reveal Animation on Scroll
         const observerOptions = {
             threshold: 0.1
         };
